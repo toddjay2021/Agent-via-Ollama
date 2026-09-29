@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: agent-via-ollama
+  mvc:
+    async:
+      request-timeout: 120s
+
+# Ollama runtime configuration
+ollama:
+  base-url: http://localhost:11434
+  model: llama3.2:1b
+  temperature: 0.1
+
+# Agent behaviour
+agent:
+  # Maximum Thought -> Action -> Observation iterations before giving up
+  max-steps: 5
